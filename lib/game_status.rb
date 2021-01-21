@@ -14,3 +14,22 @@ WIN_COMBINATIONS = [
   [6,4,2], # diagonal
   [0,4,8]  # diagonal
 ]
+
+def won?(board)
+  win_index = []
+  position = []
+  WIN_COMBINATIONS.each do |winCombo| # iterate over each winning comination of the entire winning combination array
+    counter = 0
+    winCombo.each do |index| # iterate over each element of each winning combination
+      positions[counter] = board[index] # pushes the element of the current board at the index based off the winning combination element
+      counter += 1
+    end
+    if positions.all?{|position| position == "X"} #if all the board elements in the winning combo indexes are X, it's a win!
+      return winCombo
+    elsif  position.all?{|position| position == "O"} # same above but for O
+      return winCombo
+    end
+  end
+  return false #returns false after the function iterates through each winning combination
+end
+      
