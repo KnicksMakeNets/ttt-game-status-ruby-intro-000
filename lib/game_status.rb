@@ -52,3 +52,12 @@ def over?(board)
     return false
   end
 end
+
+def winner(board)
+  if won?(board)
+    winCombo = won?(board)
+    index = winCombo[0]
+    return board[index]
+  end
+end
+
