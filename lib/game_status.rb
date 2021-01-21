@@ -33,6 +33,6 @@ def won?(board)
   return false #returns false after the function iterates through each winning combination
 end
 
-def full(board)
+def full?(board)
   board.none{|space| space == " "}
 end
