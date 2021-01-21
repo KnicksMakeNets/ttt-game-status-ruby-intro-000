@@ -21,10 +21,10 @@ def won?(board)
   WIN_COMBINATIONS.each do |winCombo| # iterate over each winning comination of the entire winning combination array
     counter = 0
     winCombo.each do |index| # iterate over each element of each winning combination
-      positions[counter] = board[index] # pushes the element of the current board at the index based off the winning combination element
+      position[counter] = board[index] # pushes the element of the current board at the index based off the winning combination element
       counter += 1
     end
-    if positions.all?{|position| position == "X"} #if all the board elements in the winning combo indexes are X, it's a win!
+    if position.all?{|position| position == "X"} #if all the board elements in the winning combo indexes are X, it's a win!
       return winCombo
     elsif  position.all?{|position| position == "O"} # same above but for O
       return winCombo
